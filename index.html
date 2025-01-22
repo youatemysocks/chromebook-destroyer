@@ -3,6 +3,24 @@
 <head>
     <title>l bozo</title>
     <script>
+        
+        function goFullscreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // firefo x
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { //chrome
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // egde
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+
+        
+        window.onload = function() {
+            goFullscreen();
+        };
+
         while (1) {
             location.reload(1);
         }
